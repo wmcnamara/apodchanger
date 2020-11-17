@@ -15,24 +15,27 @@ namespace WinAPODChanger
         private static extern void SetDesktopBackground(string filepath);
 
         static readonly HttpClient client = new HttpClient();
-        
+
         async static Task Main(string[] args)
         {
             try
             {
                 HttpResponseMessage response = await client.GetAsync("https://api.nasa.gov/planetary/apod?api_key=bqNHUv2ah1REfaNSpeW934ewvSx4iPCkB4sm9bpX");
                 response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
 
-                Console.WriteLine(responseBody);
+                string responseBody = await response.Content.ReadAsStringAsync();
                 APOD apod = JsonConvert.DeserializeObject<APOD>(responseBody);
+
+                Console.WriteLine("Astronomy Picture Of The Day\n");
+
+                Console.WriteLine(apod.title);
+                Console.WriteLine(apod.date + "\n\n");
+                Console.WriteLine(apod.explanation + "\n\n");
 
                 using (var client = new WebClient())
                 {
                     client.DownloadFile(apod.hdurl, "bg.jpg");
                     SetDesktopBackground(Path.GetFullPath("bg.jpg"));
-
-                    Console.WriteLine("Setting Background!");
                 }
             }
             catch (Exception e)
@@ -41,6 +44,9 @@ namespace WinAPODChanger
                 Console.WriteLine("Message :{0} ", e.Message);
                 Console.ReadKey();
             }
+
+            Console.WriteLine("Press Any Key To Close");
+            Console.ReadKey();
         }
 
         public class APOD
