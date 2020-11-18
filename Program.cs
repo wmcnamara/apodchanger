@@ -26,7 +26,7 @@ namespace WinAPODChanger
                 string responseBody = await response.Content.ReadAsStringAsync();
                 APOD apod = JsonConvert.DeserializeObject<APOD>(responseBody);
 
-                Console.WriteLine("Astronomy Picture Of The Day\n");
+                Console.WriteLine("Astronomy Picture Of The Day | Program Created by Weston McNamara\n");
 
                 Console.WriteLine(apod.title);
                 Console.WriteLine(apod.date + "\n\n");
