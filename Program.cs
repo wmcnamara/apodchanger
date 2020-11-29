@@ -11,6 +11,7 @@ namespace WinAPODChanger
 {
     class Program
     {
+        //Import the C++ function to set the windows background from the DLL
         [DllImport("APODWinInteraction.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern void SetDesktopBackground(string filepath);
 
@@ -20,18 +21,22 @@ namespace WinAPODChanger
         {
             try
             {
+                //Download the json containing the APOD.
                 HttpResponseMessage response = await client.GetAsync("https://api.nasa.gov/planetary/apod?api_key=bqNHUv2ah1REfaNSpeW934ewvSx4iPCkB4sm9bpX");
                 response.EnsureSuccessStatusCode();
 
+                //Deserialize the JSON
                 string responseBody = await response.Content.ReadAsStringAsync();
                 APOD apod = JsonConvert.DeserializeObject<APOD>(responseBody);
 
                 Console.WriteLine("Astronomy Picture Of The Day | Program Created by Weston McNamara\n");
 
+                //Ouput the title, date, and an image explanation
                 Console.WriteLine(apod.title);
                 Console.WriteLine(apod.date + "\n\n");
                 Console.WriteLine(apod.explanation + "\n\n");
 
+                //After displaying that, download the background, and set the desktop background with the new image.
                 using (var client = new WebClient())
                 {
                     client.DownloadFile(apod.hdurl, "bg.jpg");
