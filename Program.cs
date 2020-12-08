@@ -39,6 +39,7 @@ namespace WinAPODChanger
                 //After displaying that, download the background, and set the desktop background with the new image.
                 using (var client = new WebClient())
                 {
+                    Console.WriteLine("Downloading Background...");
                     client.DownloadFile(apod.hdurl, "bg.jpg");
                     SetDesktopBackground(Path.GetFullPath("bg.jpg"));
                 }
