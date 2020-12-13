@@ -48,6 +48,7 @@ namespace WinAPODChanger
             {
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
+                Console.WriteLine("If you're seeing this, its quite likely that the APOD today is not a format that can be set to a desktop background, such as a video.");
                 Console.ReadKey();
             }
 
