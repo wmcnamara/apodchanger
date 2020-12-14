@@ -2,9 +2,10 @@
 Thanks for checking out the APOD Changer! This program will set your desktop background to the Astronomy Picture of The Day and can be easily configured to automatically do so on startup.
 
 # Installation
-1. Download the APODChanger.zip file, and extract it.
-2. Navigate to the extracted files, and open the APODChanger folder.
-3. Running the `WinAPODChanger.exe` file will run the program and update your desktop background, along with displaying the info.
+1. Navigate to the ![releases section](https://github.com/wmcnamara/apodchanger/releases), and find the most recent version.
+2. Download the APODChanger.zip file, and extract it.
+3. Navigate to the extracted files, and open the APODChanger folder.
+4. Running the `WinAPODChanger.exe` file will run the program and update your desktop background, along with displaying the info.
 
 ## Adding To Startup:
 1. Right-click the `WinAPODChanger.exe` file, and select "Create Shortcut".
