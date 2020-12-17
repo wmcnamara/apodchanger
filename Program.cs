@@ -39,16 +39,17 @@ namespace WinAPODChanger
                 //After displaying that, download the background, and set the desktop background with the new image.
                 using (var client = new WebClient())
                 {
-                    Console.WriteLine("Downloading Background... \n");
+                    Console.WriteLine("Downloading Background...");
                     client.DownloadFile(apod.hdurl, "bg.jpg");
                     SetDesktopBackground(Path.GetFullPath("bg.jpg"));
+                    Console.WriteLine("Background Updated!");
                 }
             }
             catch (Exception e)
             {
                 //Console.WriteLine("\nException Caught!");
                 //Console.WriteLine("Message :{0} ", e.Message);
-                Console.WriteLine("The APOD today is not a format that can be set to a desktop background, such as a video. Please visit the official APOD website to view todays APOD. \n\nhttps://apod.nasa.gov/apod/astropix.html" );
+                Console.WriteLine("\nThe APOD today is not a format that can be set to a desktop background, such as a video. Please visit the official APOD website to view todays APOD. \n\nhttps://apod.nasa.gov/apod/astropix.html" );
             }
 
             Console.WriteLine("\nPress Any Key To Close");
