@@ -1,5 +1,7 @@
 # NASA Astronomy Picture of The Day Changer
-Thanks for checking out the APOD Changer! This program will set your desktop background to the Astronomy Picture of The Day and can be easily configured to automatically do so on startup.
+Thanks for checking out the APOD Changer! This program will set your desktop background to the Astronomy Picture of The Day and can be easily configured to automatically do so on startup. It also outputs an explanation of the image, along with the date and title.
+
+![APOD Example](APODExample.PNG)
 
 # Installation
 1. Navigate to the ![releases section](https://github.com/wmcnamara/apodchanger/releases), and find the most recent version.
