@@ -8,6 +8,8 @@ Thanks for checking out the APOD Changer! This program will set your desktop bac
 2. Download the APODChanger.zip file, and extract it.
 3. Navigate to the extracted files, and open the APODChanger folder.
 4. Running the `WinAPODChanger.exe` file will run the program and update your desktop background, along with displaying the info.
+### Note:
+You **need** the [Microsoft Visual C++ Redistributable](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) for the program to run correctly if you're not compiling from source.
 
 ## Adding To Startup:
 1. Right-click the `WinAPODChanger.exe` file, and select "Create Shortcut".
