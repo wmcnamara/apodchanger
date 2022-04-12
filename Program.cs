@@ -47,9 +47,6 @@ namespace WinAPODChanger
             }
             catch (Exception e)
             {
-                
-                //Console.WriteLine("\nException Caught!");
-                //Console.WriteLine("Message :{0} ", e.Message);
                 Console.WriteLine("\nThe APOD today is not a format that can be set to a desktop background, such as a video. Please visit the official APOD website to view todays APOD. \n\nhttps://apod.nasa.gov/apod/astropix.html" );
             }
 
